@@ -1,0 +1,83 @@
+function emmResizeBrowser()
+{
+	this.Width;
+	this.Height;
+	this.dimensionWidth;
+	this.dimensionHeight;
+
+	// Databinding for property dimensionWidth
+	this.SetdimensionWidth = function(data)
+	{
+		///UserCodeRegionStart:[SetdimensionWidth] (do not remove this comment.)
+		this.dimensionWidth = data;
+		
+		
+		
+		///UserCodeRegionEnd: (do not remove this comment.)
+	}
+
+	// Databinding for property dimensionWidth
+	this.GetdimensionWidth = function()
+	{
+		///UserCodeRegionStart:[GetdimensionWidth] (do not remove this comment.)
+		return this.dimensionWidth;
+		
+		
+		
+		///UserCodeRegionEnd: (do not remove this comment.)
+	}
+
+	// Databinding for property dimensionHeight
+	this.SetdimensionHeight = function(data)
+	{
+		///UserCodeRegionStart:[SetdimensionHeight] (do not remove this comment.)
+		this.dimensionHeight = data;
+		
+		
+		
+		///UserCodeRegionEnd: (do not remove this comment.)
+	}
+
+	// Databinding for property dimensionHeight
+	this.GetdimensionHeight = function()
+	{
+		///UserCodeRegionStart:[GetdimensionHeight] (do not remove this comment.)
+		return this.dimensionHeight;
+		
+		
+		
+		///UserCodeRegionEnd: (do not remove this comment.)
+	}
+
+	this.show = function()
+	{
+		///UserCodeRegionStart:[show] (do not remove this comment.)
+		var thisObjectUC = this;
+		thisObjectUC.resizeBrowser();
+		window.onresize = function() {
+			thisObjectUC.resizeBrowser();
+		}
+		
+		
+		
+		///UserCodeRegionEnd: (do not remove this comment.)
+	}
+	///UserCodeRegionStart:[User Functions] (do not remove this comment.)
+	this.resizeBrowser = function(){
+		this.SetdimensionWidth( this.getClientWidth() );
+		this.SetdimensionHeight( this.getClientHeight() );
+		this.OnResizeBrowser();
+	}
+	this.getClientWidth = function()
+	{
+    	return window.innerWidth ? window.innerWidth:document.documentElement ? document.getElementsByTagName('body')[0].clientWidth:document.body ? document.body.clientWidth:window.screen.width;
+	}
+	this.getClientHeight = function()
+	{
+    	return window.innerHeight ? window.innerHeight:document.documentElement ? document.getElementsByTagName('body')[0].clientHeight:document.body ? document.body.clientHeight:window.screen.height;
+	}
+	
+	
+	
+	///UserCodeRegionEnd: (do not remove this comment.):
+}
